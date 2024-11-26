@@ -1,0 +1,742 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    color: #ffffff;
+}
+
+/* Ícone do Menu no canto superior esquerdo */
+.menu-icon {
+    position: fixed;
+    top: 40px;
+    left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.menu-icon span {
+    display: block;
+    height: 4px;
+    background-color: #ffffff;
+    border-radius: 2px;
+}
+
+/* Sidebar Menu */
+.sidebar-menu {
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    width: 250px;
+    height: 100%;
+    background-color: #f0e001;
+    color: #fff;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: space-between;
+    padding: 20px;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease; /* Smooth slide-in effect */
+    z-index: 9;
+}
+
+/* Menu List */
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+/* Top Section Links */
+.menu-list li {
+    margin: 50px 0;
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: #351e01;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.menu-list li a:hover {
+    color: #ffcc00;
+}
+
+/* Spacer Section */
+.menu-spacer {
+    height: 190px; /* Adjust this value to control spacing */
+}
+
+/* Bottom Section (Login and Register) */
+.menu-list li:nth-last-child(2),
+.menu-list li:last-child {
+    margin-top: 20px; /* Add some extra space */
+}
+
+/* Footer Image */
+.menu-footer {
+    text-align: center;
+    margin-top: auto;
+}
+
+.menu-image {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+  
+}
+
+/* Open Sidebar Class */
+.sidebar-menu.open {
+    left: 0; /* Bring menu into view */
+}
+
+
+/* Navbar Movida para a Direita */
+.navbar {
+    position: fixed;
+    top: 40px;
+    left: auto;
+    right: 50px; /* Move a navbar mais para a direita */
+    z-index: 9;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+}
+
+.navbar ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: bold;
+    font-family: Righteous;
+}
+
+.social-icons {
+    position: fixed;
+    bottom: 20px; /* Ajusta a posição dos ícones para o canto inferior */
+    right: 20px; /* Alinha à direita */
+    display: flex;
+    gap: 15px;
+    z-index: 9;
+}
+
+/* Estilo dos Ícones Individuais */
+.social-icon {
+    color: #ffffff;
+    font-size: 1.5rem; /* Tamanho dos ícones */
+    transition: color 0.3s;
+}
+
+.social-icon:hover {
+    color: #ccc; /* Cor ao passar o mouse */
+}
+
+/* Seção Principal */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+/* Estilos do Vídeo de Fundo */
+.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.8;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.logo {
+    position: relative;
+    z-index: 2;
+}
+
+.logo img {
+    width: 150px;
+    height: auto;
+    opacity: 0.9;
+}
+
+/* Seção de Músicas */
+.musicas-section {
+    background-color: #351e01;
+    padding: 40px;
+    text-align: center;
+}
+
+.musicas-section h2 {
+    font-size: 2rem;
+    color: #ffeeee;
+    margin-bottom: 20px;
+    margin-top: 110px;
+}
+
+.musicas-container {
+    display: flex;
+    justify-content: center;
+    gap: 200px;
+    background-color: #4e2b01;
+    padding: 20px;
+    border-radius: 15px;
+    width: 80%;
+    margin: 0 auto;
+    min-height: 300px;
+    margin-top: 50px;
+}
+
+.musica-card {
+    width: 200px; /* Card width */
+    height: 300px; /* Card height */
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    position: relative;
+    overflow: hidden;
+    background-color: #4e2b01; /* Optional background */
+}
+
+.musica-card:hover {
+    transform: scale(1.05); /* Expande ligeiramente o cartão */
+}
+
+.custom-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Adjust image to fit the container */
+    border-radius: 10px;
+}
+
+/* Hidden SoundCloud Player */
+.hidden-player {
+    display: none; /* Keep the iframe invisible */
+}
+
+
+/* Estilo da Imagem */
+.musica-card img {
+    width: 100%;
+    min-height: 200px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    object-fit: cover;
+}
+
+.musica-card button {
+    background-color: #ccc;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 10px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    margin-top: auto;
+    align-self: center;
+}
+
+.musica-card button:hover {
+    background-color: #bbb;
+}
+
+/* Seção de Eventos em Destaque */
+.eventos-destaque {
+    background-color: #351e01;
+    padding: 60px 40px;
+    display: flex;
+    align-items: center;
+    gap: 200px;
+    min-height: 800px;
+}
+
+.titulo-vertical {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    color: #ffffff;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-right: 40px;
+    margin-top: -20px;
+}
+
+.cartoes-evento {
+    display: flex;
+    gap: 250px;
+    margin-top: -20px;
+}
+
+.cartao {
+    background-color: #4e2b01;
+    padding: 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out; /* Hover animation */
+}
+
+.cartao:hover {
+    transform: scale(1.05); /* Hover effect */
+}
+
+.cartao h3 {
+    font-size: 1.2rem;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+.imagem-evento {
+    width: 100%;
+    height: 250px;
+    background-color: #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.imagem-evento img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.botao-vermais {
+    background-color: #d3d3d3;
+    color: #333;
+    border: none;
+    border-radius: 15px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.botao-vermais:hover {
+    background-color: #bbb;
+}
+
+/* Footer */
+.footer {
+    background-color: #351e01;
+    color: #ffffff;
+    padding: 20px 0;
+    text-align: center;
+    font-size: 0.9rem;
+    font-family: Arial, sans-serif;
+    box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.footer-content {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-info {
+    display: flex;
+    gap: 30px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.footer-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+}
+
+.footer-item i {
+    color: #ffffff;
+}
+
+.footer-item a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-item a:hover {
+    color: #ccc;
+}
+
+/* Scroll Animation (new) */
+.card {
+    opacity: 0;
+    transform: translateY(50px); /* Start below */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.card.visible {
+    opacity: 1;
+    transform: translateY(0); /* Return to position */
+}
+
+.card:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+    transition: transform 0.3s ease-in-out; /* Smooth hover transition */
+}
+
+.footer-content p,
+.footer-info .footer-item {
+    opacity: 0; /* Inicialmente invisível */
+    transform: translateY(20px); /* Deslocamento inicial */
+    transition: opacity 0.9s ease, transform 0.5s ease;
+}
+
+/* Quando os itens se tornam visíveis */
+.footer-content p.visible,
+.footer-info .footer-item.visible {
+    opacity: 1; /* Faz o item aparecer */
+    transform: translateY(0); /* Move o item para sua posição original */
+}
+
+.play-button {
+    position: absolute;
+    bottom: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background */
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    transition: transform 0.2s ease-in-out;
+}
+
+.play-button:hover {
+    transform: scale(1.1);
+}
+
+.play-button i {
+    font-size: 2rem;
+    color: #351e01;
+}
+
+/* General Styles */
+
+
+/* Header */
+
+
+.header .logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Join Tuna Section */
+.join-tuna-section {
+    background-color: #222;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.join-tuna-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.join-tuna-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.join-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+.submit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #222;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e6b800;
+}
+
+/* Ensure the HTML and Body take up the full height of the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Make the Register Section take up the entire height of the page */
+.register-section {
+    min-height: 100vh; /* 100% of the viewport height */
+    display: flex; /* Use Flexbox for centering */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center the form vertically */
+    align-items: center; /* Center the form horizontally */
+    background-color: #222;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+
+.header .logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Register Section */
+
+
+.register-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.register-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.register-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+.submit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #222;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e6b800;
+}
+
+#errorMessage {
+    color: red !important;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Ensure the HTML and Body take up the full height of the viewport */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Make the Login Section take up the entire height of the page */
+.login-section {
+    min-height: 100vh; /* 100% of the viewport height */
+    display: flex; /* Use Flexbox for centering */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: center; /* Center the form vertically */
+    align-items: center; /* Center the form horizontally */
+    background-color: #222;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+/* Login Header (same as register) */
+.header .logo {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/* Login Section */
+.login-section h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.login-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.login-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Form group for login */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1rem;
+    margin-bottom: 5px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #333;
+    color: #fff;
+    box-sizing: border-box;
+}
+
+.form-group input::placeholder {
+    color: #aaa;
+}
+
+.submit-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: #222;
+    background-color: #ffcc00;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+    background-color: #e6b800;
+}
+
+.submit-btn:active {
+    background-color: #e6b800;
+}
+
+/* Error message styling */
+#errorMessage {
+    color: red !important;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+

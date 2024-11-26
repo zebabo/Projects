@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAUTAD</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+
+    <style>
+        /* Animations */
+        /* Initial state of cards */
+/* Initial state of cards (scroll animation) */
+
+
+    </style>
+</head>
+<body>
+    <!-- Menu Lateral -->
+    <div class="menu-icon" id="menu-icon">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+
+    <!-- Sidebar Menu -->
+<div class="sidebar-menu" id="sidebar-menu">
+    <ul class="menu-list">
+        <!-- Top Section -->
+        <li><a href="#gallery">Galeria</a></li>
+        <li><a href="#musics">Músicas</a></li>
+        <li><a href="#musics">Músicas</a></li>
+
+        <!-- Spacer Section -->
+        <div class="menu-spacer"></div>
+
+        <!-- Bottom Section -->
+        <li><a href="login.html" target="_blank">Login</a></li>
+        <li><a href="register.html" target="_blank">Registar</a></li>
+    </ul>
+    <div class="menu-footer">
+        <img src="images/LOGOTIPO_TAUTAD.png" alt="Menu Image" class="menu-image">
+    </div>
+</div>
+
+
+</body>
+
+
+    <!-- Navbar Centralizada -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#sobre">Sobre Nós</a></li>
+            <li><a href="#eventos">Eventos</a></li>
+            <li><a href="#membros">Membros</a></li>
+            <li><a href="junta.html" target="_blank">Junta-te a Nós</a></li>
+            
+        </ul>
+    </nav>
+
+    <div class="social-icons">
+        <a href="https://www.instagram.com/tautad/" target="_blank" class="social-icon">
+            <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://open.spotify.com/intl-pt/artist/38blSdSyMGOFVRH79dNwNs" target="_blank" class="social-icon">
+            <i class="fab fa-spotify"></i>
+        </a>
+        <a href="https://www.facebook.com/TAUTAD?locale=pt_PT" target="_blank" class="social-icon">
+            <i class="fab fa-facebook"></i>
+        </a>
+    </div>
+
+    <!-- Seção Principal -->
+    <section class="hero">
+        <!-- Vídeo de fundo -->
+        <video autoplay loop muted playsinline class="background-video" id="background-video">
+            <source src="images/background.mp4" type="video/mp4">
+            Seu navegador não suporta a reprodução de vídeo.
+        </video>
+    </section>
+
+    <section class="musicas-section">
+        <h2>Músicas</h2>
+        <div class="musicas-container">
+
+            <div class="musica-card">
+                <!-- Custom Image -->
+                <img src="images/musicas.jpg" alt="Custom Song Image" class="custom-image">
+            
+                <!-- Hidden SoundCloud Player -->
+                <iframe
+                    class="hidden-player"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/26463642&auto_play=false"
+                    allow="autoplay"
+                ></iframe>
+            
+                <!-- Play Button -->
+                <div class="play-button" onclick="playSong(this)">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+            </div>
+            
+            <div class="musica-card">
+                <!-- Custom Image -->
+                <img src="images/musicas.jpg" alt="Custom Song Image" class="custom-image">
+            
+                <!-- Hidden SoundCloud Player -->
+                <iframe
+                    class="hidden-player"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/26463642&auto_play=false"
+                    allow="autoplay"
+                ></iframe>
+            
+                <!-- Play Button -->
+                <div class="play-button" onclick="playSong(this)">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+            </div>
+            
+            <div class="musica-card">
+                <!-- Custom Image -->
+                <img src="images/musicas.jpg" alt="Custom Song Image" class="custom-image">
+            
+                <!-- Hidden SoundCloud Player -->
+                <iframe
+                    class="hidden-player"
+                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/26463642&auto_play=false"
+                    allow="autoplay"
+                ></iframe>
+            
+                <!-- Play Button -->
+                <div class="play-button" onclick="playSong(this)">
+                    <i class="fas fa-play-circle"></i>
+                </div>
+            </div>
+            
+            
+
+    </section>
+    <!-- Seção de Eventos em Destaque -->
+    <section class="eventos-destaque hidden">
+        <div class="titulo-vertical">
+            <h2>Eventos em<br> destaque</h2>
+        </div>
+        <div class="cartoes-evento">
+            <div class="cartao">
+                <h3>Evento 1</h3>
+                <div class="imagem-evento">
+                    <img src="images/evento1.jpeg" alt="Imagem do Evento 1">
+                </div>
+                <button class="botao-vermais">VER MAIS</button>
+            </div>
+            <div class="cartao">
+                <h3>Evento 2</h3>
+                <div class="imagem-evento">
+                    <img src="images/evento2.JPG" alt="Imagem do Evento 2">
+                </div>
+                <button class="botao-vermais">VER MAIS</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2023 TAUTAD. Todos os direitos reservados.</p>
+            <div class="footer-info">
+                <div class="footer-item">
+                    <i class="fas fa-envelope"></i>
+                    <span>Email: contacto@tautad.com</span>
+                </div>
+                <div class="footer-item">
+                    <i class="fas fa-phone"></i>
+                    <span>Contacto: +351 123 456 789</span>
+                </div>
+                <div class="footer-item">
+                    <i class="fas fa-clock"></i>
+                    <span>Horário de Atendimento: 9h - 18h (Segunda-feira--Sexta-feira)</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+   <!-- JavaScript for Scroll Animations and Play Button -->
+<script src="https://w.soundcloud.com/player/api.js"></script>
+<script>
+    document.addEventListener("DOMContentLoaded", () => {
+        // Scroll Animation for cards
+        const cards = document.querySelectorAll('.musica-card, .cartao');
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    // Add "visible" class when the card enters the viewport
+                    entry.target.classList.add('visible');
+                } else {
+                    // Remove "visible" class when the card leaves the viewport
+                    entry.target.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0.2 }); // Trigger when 20% of the card is visible
+
+        cards.forEach((card) => {
+            card.classList.add('card'); // Add base class to all cards
+            observer.observe(card); // Observe each card individually
+        });
+
+        // Scroll Animation for Footer Items
+        const footerItems = document.querySelectorAll('.footer-content p, .footer-info .footer-item');
+
+        function checkFooterVisibility() {
+            footerItems.forEach(item => {
+                const rect = item.getBoundingClientRect();
+                if (rect.top < window.innerHeight && rect.bottom > 0) {
+                    item.classList.add('visible'); // Add 'visible' when the element is visible.
+                } else {
+                    item.classList.remove('visible'); // Remove 'visible' when the element is out of view.
+                }
+            });
+        }
+
+        // Add scroll event listener for footer
+        window.addEventListener('scroll', checkFooterVisibility);
+
+        // Check visibility on page load
+        checkFooterVisibility();
+
+        // Add Play Button functionality for SoundCloud players
+        document.querySelectorAll('.play-button').forEach((button, index) => {
+            const iframe = document.querySelectorAll('.musica-card iframe')[index];
+            const playIcon = button.querySelector('.fas');
+
+            button.addEventListener('click', () => {
+                const widget = SC.Widget(iframe);
+
+                widget.isPaused((paused) => {
+                    if (paused) {
+                        widget.play();
+                        playIcon.classList.replace('fa-play-circle', 'fa-pause-circle');
+                    } else {
+                        widget.pause();
+                        playIcon.classList.replace('fa-pause-circle', 'fa-play-circle');
+                    }
+                });
+            });
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        const menuIcon = document.getElementById("menu-icon");
+        const sidebarMenu = document.getElementById("sidebar-menu");
+
+        menuIcon.addEventListener("click", () => {
+            // Toggle the "open" class on the sidebar menu
+            sidebarMenu.classList.toggle("open");
+        });
+    });
+</script>
+
+
+    
+    
+
+    
+    
+</body>
+</html>

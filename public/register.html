@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registar</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Home</a> <!-- Back to Homepage -->
+        </nav>
+    </header>
+
+    <!-- Register Section -->
+    <section class="register-section">
+        <div class="container">
+            <h2>Registar</h2>
+            <p>Crie a sua conta preenchendo o formulário abaixo.</p>
+
+            <!-- Updated form with proper action and method -->
+            <form id="registerForm" action="/register" method="POST" class="register-form">
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="O teu nome" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="O teu email" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="nif">NIF</label>
+                    <input type="text" id="nif" name="nif" placeholder="O teu NIF" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="A tua password" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="repeat-password">Repetir Password</label>
+                    <input type="password" id="repeat-password" name="repeatPassword" placeholder="Repita a tua password" required>
+                </div>
+            
+                <!-- Error message container -->
+                <div id="errorMessage" style="color: red; display: none;"></div>
+            
+                <button type="submit" class="submit-btn">Registar</button>
+            </form>
+            <div id="errorMessage" style="display: none;"></div>
+
+            <script>
+              document.getElementById('registerForm').addEventListener('submit', function (event) {
+    event.preventDefault(); // Prevent the form from submitting normally
+
+    // Get form values
+    const nome = document.getElementById('nome').value;
+    const email = document.getElementById('email').value;
+    const nif = document.getElementById('nif').value;
+    const password = document.getElementById('password').value;
+    const repeatPassword = document.getElementById('repeat-password').value;
+
+    // Password validation regex
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*(),.?":{}|<>]).{8,}$/;
+
+    // Validate password strength
+    if (!passwordRegex.test(password)) {
+        document.getElementById('errorMessage').textContent = "Password must contain at least one uppercase letter, one lowercase letter, one number, one symbol, and be at least 8 characters long.";
+        document.getElementById('errorMessage').style.display = 'block';
+        return; // Stop form submission
+    }
+
+    // Check if passwords match
+    if (password !== repeatPassword) {
+        document.getElementById('errorMessage').textContent = "Passwords do not match!";
+        document.getElementById('errorMessage').style.display = 'block';
+        return; // Stop form submission
+    }
+
+    // Prepare data to be sent
+    const formData = {
+        nome: nome,
+        email: email,
+        nif: nif,
+        password: password,
+        repeatPassword: repeatPassword
+    };
+
+    // Send the form data to the server via AJAX
+    fetch('/register', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => response.json()) // Assuming the server sends a JSON response
+    .then(data => {
+        if (data.success) {
+            // Registration successful, redirect to login page
+            alert('Registration successful! You will be redirected to the login page.');
+            window.location.href = '/login.html';  // Redirect to login page after successful registration
+        } else {
+            // Display the error message from the server
+            document.getElementById('errorMessage').textContent = data.message;
+            document.getElementById('errorMessage').style.display = 'block';
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
+});
+
+            </script>
+            
+
+        </div>
+    </section>
+</body>
+</html>

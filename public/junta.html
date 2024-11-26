@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Junta-te a Nós</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Home</a> <!-- Back to Homepage -->
+        </nav>
+    </header>
+
+    <!-- Join Us Section -->
+    <section class="join-tuna-section">
+        <div class="container">
+            <h2>Junta-te a Nós</h2>
+            <p>Preenche o formulário abaixo para te juntares à nossa Tuna!</p>
+
+            <form action="#" method="post" class="join-form">
+                <!-- Nome -->
+                <div class="form-group">
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="nome" placeholder="O teu nome" required>
+                </div>
+                
+                <!-- Email -->
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="O teu email" required>
+                </div>
+                
+                <!-- Contacto -->
+                <div class="form-group">
+                    <label for="contacto">Contacto</label>
+                    <input type="tel" id="contacto" name="contacto" placeholder="O teu contacto" required>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="submit-btn">Submeter</button>
+            </form>
+        </div>
+    </section>
+
+   <!-- Footer -->
+   <footer class="footer">
+    <div class="footer-content">
+        <p>&copy; 2023 TAUTAD. Todos os direitos reservados.</p>
+        <div class="footer-info">
+            <div class="footer-item">
+                <i class="fas fa-envelope"></i>
+                <span>Email: contacto@tautad.com</span>
+            </div>
+            <div class="footer-item">
+                <i class="fas fa-phone"></i>
+                <span>Contacto: +351 123 456 789</span>
+            </div>
+            <div class="footer-item">
+                <i class="fas fa-clock"></i>
+                <span>Horário de Atendimento: 9h - 18h (Segunda-feira--Sexta-feira)</span>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script>
+// Scroll Animation for Footer Items
+const footerItems = document.querySelectorAll('.footer-content p, .footer-info .footer-item');
+
+function checkFooterVisibility() {
+    footerItems.forEach(item => {
+        const rect = item.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+            item.classList.add('visible'); // Add 'visible' when the element is visible.
+        } else {
+            item.classList.remove('visible'); // Remove 'visible' when the element is out of view.
+        }
+    });
+}
+
+// Add scroll event listener for footer
+window.addEventListener('scroll', checkFooterVisibility);
+
+// Check visibility on page load
+checkFooterVisibility();
+</script>
+</body>
+</html>

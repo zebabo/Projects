@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <nav class="navbar">
+            <a href="index.html" class="logo">Home</a> <!-- Back to Homepage -->
+        </nav>
+    </header>
+
+    <!-- Login Section -->
+    <section class="login-section">
+        <div class="container">
+            <h2>Login</h2>
+            <p>Enter your email and password to login.</p>
+
+            <!-- Login Form -->
+            <form id="loginForm" action="/login" method="POST" class="login-form">
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                </div>
+            
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+            
+                <!-- Error message container -->
+                <div id="errorMessage" style="color: red; display: none;"></div>
+            
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+        </div>
+    </section>
+
+    <script>
+        // Optional: Add JavaScript to handle form submission via AJAX
+        document.getElementById('loginForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent normal form submission
+
+            // Get form values
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+
+            // Prepare data to be sent
+            const formData = {
+                email: email,
+                password: password
+            };
+
+            // Send data to the server via AJAX
+            fetch('/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => {
+                if (!response.ok) {
+                    return response.json().then(data => {
+                        throw new Error(data.message || 'Something went wrong');
+                    });
+                }
+                return response.json(); // Assuming the server sends a JSON response
+            })
+            .then(data => {
+                if (data.success) {
+                    // Handle success (e.g., redirect to dashboard)
+                    alert('Login successful!');
+                    window.location.href = '/'; // Redirect to the homepage
+                } else {
+                    // Display error message
+                    document.getElementById('errorMessage').textContent = data.message;
+                    document.getElementById('errorMessage').style.display = 'block';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('errorMessage').textContent = error.message;
+                document.getElementById('errorMessage').style.display = 'block';
+            });
+        });
+    </script>
+
+</body>
+</html>
